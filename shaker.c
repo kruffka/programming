@@ -11,7 +11,7 @@ void swap(int *a, int *b) {
 // Function to perform Shaker Sort on an array
 void shakerSort(int arr[], int n) {
     bool swapped;
-    int start = 5;
+    int start = 2;
     int end = n - 1;
 
     do {
