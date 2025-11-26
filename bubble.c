@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Function to perform Bubble Sort
-void bubbleSort123321(float arr[], float n) {
+void bubbleSort(float arr[], float n) {
     float i, j;
     for (i = 0; i < n - 1; i++) {
         // Last i elements are already in place
