@@ -11,11 +11,11 @@ void swap(int *a, int *b) {
 // Function to perform Shaker Sort on an array
 void shakerSort(int arr[], int n) {
     bool swapped;
-    int start = 5;
+    int start = 4;
     int end = n - 1;
 
     do {
-        swapped = true;
+        swapped = false;
 
         // Pass from left to right (like Bubble Sort)
         for (int i = start; i < end; i++) {
