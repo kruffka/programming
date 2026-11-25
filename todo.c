@@ -21,11 +21,9 @@ typedef struct {
 } TaskManager;
 
 // Прототипы функций
-void todo_init(TaskManager *tm);
+void manager_init(TaskManager *tm);
 void clear_input_buffer(void);
 void print_menu(void);
-void add_task(TaskManager *tm);
-void list_tasks(const TaskManager *tm);
 void toggle_task(TaskManager *tm);
 void delete_task(TaskManager *tm);
 void save_tasks(const TaskManager *tm);
@@ -62,9 +60,7 @@ int main(void) {
             case 3:
                 toggle_task(&tm);
                 break;
-            case 4:
-                delete_task(&tm);
-                break;
+
             case 5:
                 save_tasks(&tm);
                 break;
