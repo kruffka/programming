@@ -21,11 +21,9 @@ typedef struct {
 } TaskManager;
 
 // Прототипы функций
-void init_manager(TaskManager *tm);
+void manager_init(TaskManager *tm);
 void clear_input_buffer(void);
 void print_menu(void);
-void add_task(TaskManager *tm);
-void list_tasks(const TaskManager *tm);
 void toggle_task(TaskManager *tm);
 void delete_task(TaskManager *tm);
 void save_tasks(const TaskManager *tm);
@@ -34,7 +32,7 @@ const char* get_priority_str(int priority);
 
 int main(void) {
     TaskManager tm;
-    init_manager(&tm);
+    manager_init(&tm);
     load_tasks(&tm);
 
     int choice = 0;
@@ -49,6 +47,7 @@ int main(void) {
             clear_input_buffer();
             continue;
         }
+        printf("123\n");
         clear_input_buffer();
 
         switch (choice) {
@@ -61,9 +60,7 @@ int main(void) {
             case 3:
                 toggle_task(&tm);
                 break;
-            case 4:
-                delete_task(&tm);
-                break;
+
             case 5:
                 save_tasks(&tm);
                 break;
@@ -79,7 +76,7 @@ int main(void) {
     return 0;
 }
 
-void init_manager(TaskManager *tm) {
+void manager_init(TaskManager *tm) {
     tm->count = 0;
     tm->next_id = 1;
 }
