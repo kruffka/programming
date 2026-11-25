@@ -21,7 +21,7 @@ typedef struct {
 } TaskManager;
 
 // Прототипы функций
-void init_manager(TaskManager *tm);
+void todo_init(TaskManager *tm);
 void clear_input_buffer(void);
 void print_menu(void);
 void add_task(TaskManager *tm);
@@ -34,7 +34,7 @@ const char* get_priority_str(int priority);
 
 int main(void) {
     TaskManager tm;
-    init_manager(&tm);
+    todo_init(&tm);
     load_tasks(&tm);
 
     int choice = 0;
@@ -49,6 +49,7 @@ int main(void) {
             clear_input_buffer();
             continue;
         }
+        printf("312\n");
         clear_input_buffer();
 
         switch (choice) {
@@ -67,10 +68,6 @@ int main(void) {
             case 5:
                 save_tasks(&tm);
                 break;
-            case 0:
-                save_tasks(&tm);
-                printf("Выход из программы. До свидания!\n");
-                return 0;
             default:
                 printf("Неверный пункт меню. Попробуйте снова.\n");
         }
@@ -79,7 +76,7 @@ int main(void) {
     return 0;
 }
 
-void init_manager(TaskManager *tm) {
+void todo_init(TaskManager *tm) {
     tm->count = 0;
     tm->next_id = 1;
 }
